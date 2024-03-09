@@ -1,5 +1,5 @@
 # Spectro
-Spectro is a software designed to help you discover new wallpapers every day.
+Spectro is a versatile wallpaper downloader software designed to effortlessly fetch and update your desktop backgrounds daily. With its intuitive interface, users can specify themes of interest and set the number of wallpapers to download, ensuring a fresh and personalized desktop experience every day.
 
 ## How to Use Spectro - Wallpaper Downloader
 
@@ -30,7 +30,7 @@ Spectro is a software designed to help you discover new wallpapers every day.
 - Choose the "Slideshow" option for your background and select the "wallpapers" folder as the source folder.
 - Customize other slideshow settings as desired.
 
-### 7. Starting on Boot (Optional):
+### 7. Starting on Boot (Optional but recommended):
 - If you want Spectro to start automatically when your computer boots up, check the "Start on Boot" checkbox.
 - Spectro will then fetch a new theme randomly each time you switch on your computer and add the wallpapers to your wallpaper folder.
 
@@ -42,4 +42,4 @@ Spectro is a software designed to help you discover new wallpapers every day.
 - Ensure you have an active internet connection while downloading wallpapers.
 - When initiating a new download, all previous wallpapers will be removed.
 - A larger number of wallpapers to download will provide a greater variety of images daily but will increase download time.
-- Spectro searches for wallpapers based on keywords, similar to a Google image search. Therefore, if your search terms are too specific, it may lead to unexpected results. Including broader terms like "art" can help avoid poor-quality or unattractive images; for example, "Rick and Morty art" is preferable to just "Rick and Morty."
+- *Spectro searches for wallpapers based on keywords, similar to a Google image search. Therefore, if your search terms are too specific, it may lead to unexpected results. Including broader terms like "art" can help avoid poor-quality or unattractive images; for example, "Rick and Morty art" is preferable to just "Rick and Morty."*
