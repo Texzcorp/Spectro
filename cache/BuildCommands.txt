@@ -1,0 +1,2 @@
+pyinstaller --name Spectro --onefile --windowed --noconsole --icon=LogoSpectro.ico --add-data "data/themes.txt;data" --add-data "data;data" --add-data "data\fonts;data\fonts" ui.py
+pyinstaller --onefile --icon=LogoSpectro.ico --add-data "data/themes.txt;data" Spectro_Autorun.py
