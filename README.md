@@ -42,4 +42,4 @@ Spectro is a versatile wallpaper downloader software designed to effortlessly fe
 - Ensure you have an active internet connection while downloading wallpapers.
 - When initiating a new download, all previous wallpapers will be removed.
 - A larger number of wallpapers to download will provide a greater variety of images daily but will increase download time.
-- *Spectro searches for wallpapers based on keywords, similar to a Google image search. Therefore, if your search terms are too specific, it may lead to unexpected results. Including broader terms like "art" can help avoid poor-quality or unattractive images; for example, "Rick and Morty art" is preferable to just "Rick and Morty."*
+- **Spectro searches for wallpapers based on keywords, similar to a Google image search. Therefore, if your search terms are too specific, it may lead to unexpected results. Including broader terms like "art" can help avoid poor-quality or unattractive images; for example, "Rick and Morty art" is preferable to just "Rick and Morty."**
