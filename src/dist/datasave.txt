@@ -1,2 +1,4 @@
 num_wallpapers=15
-currenttheme=No current theme
+currenttheme=Renaissance spirit
+themesuffix=wallpaper 1920x1080
+adult_filter=True

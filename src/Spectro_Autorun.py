@@ -1,47 +1,45 @@
-from main import download_images, clear_wallpapers, read_themes
 import random
 import os
+from main import download_images, clear_wallpapers, read_themes
 
-def get_num_wallpapers():
+def get_savedata():
+    savedata = {}
     try:
         with open(os.path.join("data", "datasave.txt"), 'r') as file:
             lines = file.readlines()
             for line in lines:
-                if line.startswith("num_wallpapers="):
-                    return int(line.split("=")[1].strip())
+                key, value = line.strip().split("=")
+                savedata[key] = value
     except FileNotFoundError:
-        return 10  # Valeur par défaut si le fichier n'existe pas
+        pass
+    return savedata
 
-num_wallpapers = get_num_wallpapers()
-
-# def load_datasave():
-#     try:
-#         with open("datasave.txt", 'r') as file:
-#             lines = file.readlines()
-#             for line in lines:
-#                 if line.startswith("num_wallpapers="):
-#                     num_wallpapers = line.split("=")[1].strip()
-#                 if line.startswith("currenttheme="):
-#                     currenttheme = line.split("=")[1].strip()
-#     except FileNotFoundError:
-#         pass
-    
-def save_datasave(theme):
+def save_savedata(savedata):
     with open(os.path.join("data", "datasave.txt"), "w") as file:
-        file.write(f"num_wallpapers={num_wallpapers}\n")
-        file.write(f"currenttheme={theme}\n")
+        for key, value in savedata.items():
+            file.write(f"{key}={value}\n")
 
 def main():
-    themes = read_themes(os.path.join("data","themes.txt"))
+    savedata = get_savedata()
+    num_wallpapers = int(savedata.get("num_wallpapers", 10))  # Valeur par défaut si non trouvée
+    current_theme = savedata.get("currenttheme", "")
+
+    themes = read_themes(os.path.join("data", "themes.txt"))
     
     if themes:
         clear_wallpapers("wallpapers")
         random_theme = random.choice(themes)
-        download_images([random_theme], num_wallpapers, None)
-        save_datasave(random_theme)
+        suffix = savedata.get("themesuffix", "")  # Récupérer le suffixe du savedata
+        isSFW = savedata.get("adult_filter", "")  # Récupérer le suffixe du savedata
+        if suffix:
+            random_theme += f" {suffix}"  # Appliquer le suffixe au thème
+        download_images([random_theme], num_wallpapers, None, isSFW)
+        savedata["currenttheme"] = random_theme  # Mettre à jour le thème actuel dans le savedata
         print(f"Theme '{random_theme}' downloaded and {num_wallpapers} wallpapers downloaded.")
     else:
         print("Please add at least one theme.")
+
+    save_savedata(savedata)  # Sauvegarder le savedata mis à jour
 
 if __name__ == "__main__":
     main()

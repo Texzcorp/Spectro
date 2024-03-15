@@ -1,2 +1,4 @@
-num_wallpapers=30
-currenttheme=Space jazz
+num_wallpapers=5
+currenttheme=Renaissance spirit
+themesuffix=wallpaper 1920x1080
+adult_filter=True

@@ -19,12 +19,12 @@ def read_themes(file_path):
     return themes
 
 # Function to download images based on themes and filter full HD images
-def download_images(themes, num_wallpapers, progress_queue):
+def download_images(themes, num_wallpapers, progress_queue, is_adult_filter_on):
     for theme in themes:
         print(f"Searching images for theme: {theme}")
         large_limit = int(max(num_wallpapers + 20, num_wallpapers * 1.2))
-        query = f'{theme} wallpaper 1920x1080 landscape'
-        downloader.download(query, limit=large_limit, output_dir=os.path.join("data","temp"), adult_filter_off=False, force_replace=False, timeout=60)
+        query = f'{theme}'
+        downloader.download(query, limit=large_limit, output_dir=os.path.join("data","temp"), adult_filter_off=not is_adult_filter_on, force_replace=False, timeout=30)
         if progress_queue is not None:  # Vérifier si progress_queue n'est pas None
             progress_queue.put(50)  # Mettre à jour la file d'attente avec l'avancement du téléchargement
     move_full_hd_images(os.path.join("data","temp"), num_wallpapers, progress_queue)  # Appeler la fonction de filtrage des images
