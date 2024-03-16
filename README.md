@@ -34,9 +34,8 @@ Spectro is a versatile wallpaper downloader software designed to effortlessly fe
 - If you want Spectro to start automatically when your computer boots up, check the "Start on Boot" checkbox.
 - Spectro will then fetch a new theme randomly each time you switch on your computer and add the wallpapers to your wallpaper folder.
 
-### 8. Exiting Spectro:
-- To close Spectro, click the close button (X) on the application window.
-- Your settings and themes will be saved for the next time you use the application.
+### 8. Spectro saving:
+- Pushing the download button or closing the application will save your settings. (Even if you close it by pressing ALT+F4
 
 ## Notes: 
 - Ensure you have an active internet connection while downloading wallpapers.
